@@ -1,0 +1,41 @@
+.content {
+  width: 1024px;
+  margin: 0 auto; }
+
+.month-nav .pure-button {
+  font-size: 85%; }
+.month-nav .prev {
+  text-align: right; }
+.month-nav .current {
+  text-align: center;
+  font-size: larger; }
+
+.wis-table {
+  width: 100%;
+  margin-bottom: 10px; }
+  .wis-table .pure-button {
+    font-size: 70%;
+    margin-right: 10px; }
+  .wis-table thead {
+    font-weight: bold; }
+    .wis-table thead td {
+      width: 33%; }
+    .wis-table thead td:not(:first-child) {
+      width: 25%; }
+  .wis-table tfoot {
+    background-color: #F3F3F3; }
+
+.expenses {
+  margin-top: 50px; }
+
+.status {
+  text-align: center;
+  font-size: 36px; }
+
+.green {
+  color: #22C322; }
+
+.red {
+  color: #CE1919; }
+
+/*# sourceMappingURL=style.css.map */

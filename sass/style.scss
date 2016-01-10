@@ -1,0 +1,53 @@
+.content {
+  width: 1024px;
+  margin: 0 auto
+}
+
+.month-nav {
+  .pure-button { font-size: 85%; }
+  .prev { text-align: right; }
+  .current { text-align: center; font-size: larger; }
+}
+
+.wis-table {
+  width: 100%;
+  margin-bottom: 10px;
+
+  .pure-button {
+    font-size: 70%;
+    margin-right: 10px
+  }
+
+  thead {
+    font-weight: bold;
+
+    td {
+      width: 33%;
+    }
+
+    td:not(:first-child) {
+      width: 25%;
+    }
+  }
+
+  tfoot {
+    background-color: #F3F3F3;
+  }
+}
+
+.expenses {
+  margin-top: 50px
+}
+
+.status {
+  text-align: center;
+  font-size: 36px;
+}
+
+.green {
+  color: #22C322;
+}
+
+.red {
+  color: #CE1919;
+}

@@ -1,0 +1,42 @@
+{
+  "02": [
+    {
+      "name": "Internet",
+      "amount": 50,
+      "type": "expense",
+      "date": "2016-01-05"
+    },
+    {
+      "name": "AvantCar",
+      "amount": 150,
+      "type": "income",
+      "date": "2016-01-06"
+    },
+    {
+      "name": "Slušalke",
+      "amount": 75,
+      "type": "expense",
+      "date": "2016-01-07"
+    }
+  ],
+  "03": [
+    {
+      "name": "Internet",
+      "amount": 50,
+      "type": "expense",
+      "date": "2016-01-05"
+    },
+    {
+      "name": "AvantCar",
+      "amount": 150,
+      "type": "income",
+      "date": "2016-01-06"
+    },
+    {
+      "name": "Slušalke",
+      "amount": 75,
+      "type": "expense",
+      "date": "2016-01-07"
+    }
+  ]
+}

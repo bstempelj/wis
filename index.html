@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>WIS</title>
+  <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="content">
+    <div id="month-view" class="month-view page hidden">
+      <h1>Mesečni pogled</h1>
+      <nav id="month-nav" class="month-nav pure-g"></nav>
+
+      <table id="income" class="wis-table income pure-table">
+        <thead>
+          <tr>
+            <td>PRIHODKI</td>
+            <td>Trenutni mesec</td>
+            <td>Prejšnji mesec</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+      </table>
+      <button id="add-income" class="pure-button">Dodaj prihodek</button>
+
+      <table id="expenses" class="wis-table expenses pure-table">
+        <thead>
+          <tr>
+            <td>ODHODKI</td>
+            <td>Znesek</td>
+            <td>Prejšnji mesec</td>
+            <td></td>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot></tfoot>
+      </table>
+      <button id="add-expense" class="pure-button">Dodaj odhodek</button>
+
+      <p id="status" class="status"></p>
+    </div>
+
+    <div class="add-view page hidden"></div>
+    <div class="edit-view page hidden"></div>
+  </div>
+
+  <!-- JS Includes -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+  <script id="month-name" type="text/x-handlebars-template">
+    <div class="pure-u-1-3"><p id="prev-month" class="prev"><button class="button-small pure-button" href="#">&#10094;</button></p></div>
+    <div class="pure-u-1-3"><p class="current">{{name}}</p></div>
+    <div class="pure-u-1-3"><p id="next-month" class="next"><button class="button-small pure-button" href="#">&#10095;</button></p></div>
+  </script>
+  <script id="wit-body" type="x-handlebars-template">
+    {{#each this}}
+      <tr>
+        <td>{{name}}</td>
+        <td>{{current}} €</td>
+        <td>{{previous}} €</td>
+        <td><button id="edit-{{type}}-{{id}}" class="pure-button">Uredi</button><button id="remove-{{id}}" class="pure-button">Izbriši</button></td>
+      </tr>
+    {{/each}}
+  </script>
+  <script id="wit-foot" type="x-handlebars-template">
+    <tr>
+      <td>SUM</td>
+      <td>{{sum.current}} €</td>
+      <td>{{sum.previous}} €</td>
+      <td></td>
+    </tr>
+  </script>
+  <script id="add-script" type="text/x-handlebars-template">
+    <h1>Dodaj {{heading}} za {{month}}</h1>
+
+    <form class="pure-form pure-form-aligned">
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="name">Ime {{type}}</label>
+          <input id="add-name" type="text">
+        </div>
+        <div class="pure-control-group">
+          <label for="amount">Znesek</label>
+          <input id="add-amount" type="text">
+        </div>
+        <button id="add-submit" class="pure-button pure-button-primary">Shrani</button>
+        <button id="add-cancel" class="pure-button">Prekini</button>
+      </fieldset>
+    </form>
+  </script>
+  <script id="edit-script" type="text/x-handlebars-template">
+    <h1>Uredi {{heading}} za {{month}}</h1>
+
+    <form class="pure-form pure-form-aligned">
+      <fieldset>
+        <div class="pure-control-group">
+          <label for="name">Ime {{type}}</label>
+          <input id="edit-name" type="text">
+        </div>
+        <div class="pure-control-group">
+          <label for="amount">Znesek</label>
+          <input id="edit-amount" type="text">
+        </div>
+        <button id="edit-submit" class="pure-button pure-button-primary">Shrani</button>
+        <button id="edit-cancel" class="pure-button">Prekini</button>
+      </fieldset>
+    </form>
+  </script>
+  <script id="status-script" type="text/x-handlebars-template">
+    {{#if isPositive}}
+      Stanje: <span class="green"><strong>{{status}} €</strong></span>
+    {{else}}
+      Stanje: <span class="red"><strong>{{status}} €</strong></span>
+    {{/if}}
+  </script>
+  <script src="js/shared.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/Storage.js"></script>
+  <script src="js/Transaction.js"></script>
+  <script src="js/month-view.js"></script>
+  <script src="js/add-view.js"></script>
+  <script src="js/edit-view.js"></script>
+</body>
+</html>
